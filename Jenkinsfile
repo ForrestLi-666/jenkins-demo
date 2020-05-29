@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        echo 'Building..'
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'Building..'
+          }
+        }
+
+        stage('CheckCode') {
+          steps {
+            bat(encoding: 'UTF-8', script: 'cd /d D:\\AllWorkSpace\\MavenCICD\\demo mvn install')
+          }
+        }
+
       }
     }
 
