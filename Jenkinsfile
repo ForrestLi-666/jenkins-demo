@@ -9,9 +9,15 @@ pipeline {
           }
         }
 
-        stage('CheckCode') {
+        stage('Go to project') {
           steps {
             bat(encoding: 'UTF-8', script: 'cd /d D:\\AllWorkSpace\\MavenCICD\\demo')
+          }
+        }
+
+        stage('Mvn build') {
+          steps {
+            bat(script: 'mvn install', encoding: 'UTF-8')
           }
         }
 
