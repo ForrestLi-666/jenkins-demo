@@ -25,8 +25,19 @@ pipeline {
     }
 
     stage('Deploy') {
-      steps {
-        echo 'Deploying....'
+      parallel {
+        stage('Deploy') {
+          steps {
+            echo 'Deploying....'
+          }
+        }
+
+        stage('') {
+          steps {
+            s3Upload 'jekins-demo'
+          }
+        }
+
       }
     }
 
