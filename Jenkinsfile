@@ -17,7 +17,7 @@ pipeline {
 
         stage('Mvn build') {
           steps {
-            bat(script: 'mvn install', encoding: 'UTF-8')
+            bat(script: 'mvn-install.bat', encoding: 'UTF-8')
           }
         }
 
