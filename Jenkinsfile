@@ -34,7 +34,7 @@ pipeline {
 
         stage('Copy') {
           steps {
-            s3Upload(bucket: 'jekins-demo', metadatas: '1.0', path: 'C:\\windows\\system32\\config\\systemprofile\\.m2\\repository\\demo\\demo\\0.0.1-SNAPSHOT\\demo-0.0.1-SNAPSHOT.war')
+            s3Upload(file:'demo-0.0.1-SNAPSHOT.war', bucket: 'jekins-demo', path: 'C:\\windows\\system32\\config\\systemprofile\\.m2\\repository\\demo\\demo\\0.0.1-SNAPSHOT\\demo-0.0.1-SNAPSHOT.war')
           }
         }
 
