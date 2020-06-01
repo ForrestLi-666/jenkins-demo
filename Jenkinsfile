@@ -32,9 +32,9 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
-            s3Upload 'jekins-demo'
+            s3Upload(bucket: 'jekins-demo', metadatas: '1.0', path: 'C:\\windows\\system32\\config\\systemprofile\\.m2\\repository\\demo\\demo\\0.0.1-SNAPSHOT\\demo-0.0.1-SNAPSHOT.war')
           }
         }
 
