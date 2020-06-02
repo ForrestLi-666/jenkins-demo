@@ -45,7 +45,7 @@ pipeline {
 
         stage('Upload') {
           steps {
-            s3Upload(file: 'demo-0.0.1-SNAPSHOT.war', bucket: 'jekins-demo', path: 'demo-0.0.1-SNAPSHOT.war')
+            s3Upload(file: 'D:\\JenkinsUpload\\demo-0.0.1-SNAPSHOT.war', bucket: 'jekins-demo', path: 'demo-0.0.1-SNAPSHOT.war')
           }
         }
 
