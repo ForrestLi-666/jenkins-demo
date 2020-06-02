@@ -28,7 +28,7 @@ pipeline {
 
         stage('Copy') {
           steps {
-            bat(script: 'copy.bat', encoding: 'utf-8')
+            bat(script: 'copy.bat', encoding: 'UTF-8')
           }
         }
 
