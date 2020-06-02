@@ -28,7 +28,7 @@ pipeline {
 
         stage('Copy') {
           steps {
-            bat 'copy'
+            bat 'copy.bat'
           }
         }
 
