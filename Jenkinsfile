@@ -18,9 +18,20 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      steps {
-        echo 'Testing..'
+    stage('Move') {
+      parallel {
+        stage('Move') {
+          steps {
+            echo 'Copy..'
+          }
+        }
+
+        stage('Copy') {
+          steps {
+            bat 'copy'
+          }
+        }
+
       }
     }
 
@@ -32,11 +43,9 @@ pipeline {
           }
         }
 
-        stage('Copy') {
+        stage('Upload') {
           steps {
-            
-             s3Upload(file: 'demo-0.0.1-SNAPSHOT.war', bucket: 'jekins-demo', path: 'demo-0.0.1-SNAPSHOT.war')
-            
+            s3Upload(file: 'demo-0.0.1-SNAPSHOT.war', bucket: 'jekins-demo', path: 'demo-0.0.1-SNAPSHOT.war')
           }
         }
 
