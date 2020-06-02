@@ -34,7 +34,7 @@ pipeline {
 
         stage('Copy') {
           steps {
-            withAws(profile:'JenkinsDemo'){
+            withAWS(profile:'JenkinsDemo'){
              s3Upload(file: 'demo-0.0.1-SNAPSHOT.war', bucket: 'jekins-demo', path: 'demo-0.0.1-SNAPSHOT.war')
             }
           }
